@@ -1,12 +1,13 @@
 
-# from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
+from django.http import JsonResponse
 from .classifier import Classifier
 from .models import Fish
 
 
 def index(request):
-    return HttpResponse('Hello from django!')
+    context = {}
+    return render(request, 'www/index.html', context)
 
 
 def api(request):
